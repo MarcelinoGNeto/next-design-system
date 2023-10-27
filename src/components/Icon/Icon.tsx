@@ -1,18 +1,31 @@
 import { BaseComponent } from "@src/theme/BaseComponent";
 import * as icons from "./svgs/_index";
+import { StyleSheet } from '@src/theme/StyleSheet';
 
-interface IconProps {
-  name: string;
+const iconSizes = {
+  xs: '12px',
+  sm: '16px',
+  md: '24px',
+  lg: '32px',
+  xl: '36px',
 }
 
-export default function Icon({ name }) {
-  const CurrentIcon = icons[name] || icons['default_icon'];
+interface IconProps {
+  name: keyof typeof icons;
+  styleSheet?: StyleSheet;
+  size?: keyof typeof iconSizes;
+}
+
+export default function Icon({ size, name }: IconProps) {
+  const CurrentIcon = icons[name];
+  if(!CurrentIcon) return <>"${name}" is not a valid <Icon /></>;
+
   return (
     <BaseComponent
       as="svg"
       styleSheet={{
-        width: '24px',
-        height: '24px',
+        width: iconSizes[size],
+        height: iconSizes[size],
       }}
       color="inherit"
       fill="currentColor"
@@ -22,5 +35,10 @@ export default function Icon({ name }) {
       <CurrentIcon />
     </BaseComponent>
   )
-
 }
+
+Icon.defaultProps = {
+  name: 'default_icon',
+  size: 'md'
+}
+
