@@ -1,35 +1,42 @@
+import { BaseComponent } from "@src/theme/BaseComponent";
+import { StyleSheet } from "@src/theme/StyleSheet";
+import { ThemeTypographyVariants } from "@src/theme/theme";
+import { useTheme } from "@src/theme/ThemeProvider";
 import React from 'react';
-import theme, { ThemeTypographyVariants } from '@src/theme/theme';
-import { StyleSheet } from '@src/theme/StyleSheet';
-import { BaseComponent } from '@src/theme/BaseComponent';
 
 interface TextProps {
   variant?: ThemeTypographyVariants;
-  tag?: 'p' | 'li' | 'h1' | 'h2' | 'h3';
+  tag?: 'p' | 'li' | 'h1' | 'h2' | 'h2' | string;
   children?: React.ReactNode;
   styleSheet?: StyleSheet;
+  ref: any;
 }
-
-export default function Text({
-  styleSheet,
+const Text = React.forwardRef(({
+  tag,
+  styleSheet, 
   variant,
   ...props
-}: TextProps) {
-
+}: TextProps, ref) => {
+  const theme = useTheme();
   const textVariant = theme.typography.variants[variant];
 
   return (
-    <BaseComponent 
-      styleSheet={{ 
+    <BaseComponent
+      as={tag}
+      styleSheet={{
         fontFamily: theme.typography.fontFamily,
         ...textVariant,
         ...styleSheet,
-      }} 
-      {...props} />
+      }}
+      ref={ref}
+      {...props}
+    />
   )
-}
+})
 
 Text.defaultProps = {
   tag: 'p',
   variant: 'body2'
-}
+};
+
+export default Text;

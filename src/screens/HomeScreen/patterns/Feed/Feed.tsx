@@ -1,14 +1,14 @@
+import React from 'react';
 import Box from "@src/components/Box/Box";
-import Icon from "@src/components/Icon/Icon";
-import Image from "@src/components/Icon/Image/Image";
 import Text from "@src/components/Text/Text";
-import React from "react";
+import Icon from "@src/components/Icon/Icon";
+import Image from "@src/components/Image/Image";
+import Link from "@src/components/Link/Link";
 
 interface FeedProps {
   children: React.ReactNode;
 }
-
-export default function Feed({ children }:FeedProps) {
+export default function Feed({ children }) {
   return (
     <Box>
       <Text>
@@ -21,11 +21,7 @@ export default function Feed({ children }:FeedProps) {
 
 Feed.Header = () => {
   return (
-    <Box
-    styleSheet={{
-      color: "white"
-    }}
-    >
+    <Box>
       <Image
         styleSheet={{
           width: '128px',
@@ -33,11 +29,13 @@ Feed.Header = () => {
           borderRadius: '100%',
         }}
         src="https://github.com/MarcelinoGNeto.png"
-        alt="Imagem de perfil do Mario Souto"
+        alt="Imagem de perfil Marcelino"
       />
-      <Icon name="youtube" /> 
-      <Icon name="twitter" /> 
-      <Icon name="instagram" /> 
+      <Link href="https://www.youtube.com/@marcelinoneto161">
+        <Icon name="youtube" />
+      </Link>
+      <Icon name="twitter" />
+      <Icon name="instagram" />
       <Icon name="github" />
       <Text>
         Feed Header
