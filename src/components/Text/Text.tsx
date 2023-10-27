@@ -1,11 +1,11 @@
 import React from 'react';
-import theme from '@src/theme/theme';
+import theme, { ThemeTypographyVariants } from '@src/theme/theme';
 import { StyleSheet } from '@src/theme/StyleSheet';
 import { BaseComponent } from '@src/theme/BaseComponent';
 
 interface TextProps {
-  variant?: "display1";
-  tag?: 'p' | 'li' | 'h1' | 'h2' | 'h3' | string;
+  variant?: ThemeTypographyVariants;
+  tag?: 'p' | 'li' | 'h1' | 'h2' | 'h3';
   children?: React.ReactNode;
   styleSheet?: StyleSheet;
 }
