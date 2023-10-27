@@ -4,13 +4,14 @@ import Menu from "./patterns/Menu/Menu";
 import Text from "@src/components/Text/Text";
 import Feed from "./patterns/Feed/Feed";
 import Footer from "./patterns/Footer/Footer";
+import theme from "@src/theme/theme";
 
 export default function HomeScreen() {
   return (
     <Box 
     tag="main" 
     styleSheet={{
-      backgroundColor: "grey",
+      backgroundColor: theme.colors.positive.x100,
       flex: 1,
     alignItems: "center"
     }}
