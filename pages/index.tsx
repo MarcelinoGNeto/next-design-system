@@ -1,8 +1,7 @@
-export { default } from "@src/screens/HomeScreen/HomeScreen";
+export { default } from '@src/screens/HomeScreen/HomeScreen';
 
 // import Box from "@src/components/Box";
 // import theme from "@src/theme/theme";
-
 // export default function HomeScreen() {
 //   return (
 //     <Box
@@ -10,13 +9,13 @@ export { default } from "@src/screens/HomeScreen/HomeScreen";
 //       styleSheet={{
 //         fontFamily: theme.typography.fontFamily,
 //         backgroundColor: {
-//           xs: "red",
-//           sm: "blue",
-//           md: "yellow"
+//           xs: 'red',
+//           sm: 'yellow',
+//           md: 'blue',
 //         }
 //       }}
 //     >
-//       Hello Word
+//       Oi
 //     </Box>
-//   );
+//   )
 // }
