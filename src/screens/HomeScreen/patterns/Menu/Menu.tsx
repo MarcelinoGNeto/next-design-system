@@ -25,15 +25,15 @@ export default function Menu() {
         styleSheet={{
           width: baseSize,
           height: baseSize,
-          backgroundColor: theme.colors.positive.x500,
+          backgroundColor: theme.colors.primary.x500,
           borderRadius: '100%',
           alignItems: 'center',
           justifyContent: 'center',
           hover: {
-            backgroundColor: theme.colors.positive.x400,
+            backgroundColor: theme.colors.primary.x400,
           },
           focus: {
-            backgroundColor: theme.colors.positive.x600,
+            backgroundColor: theme.colors.primary.x600,
           },
         }}
       >

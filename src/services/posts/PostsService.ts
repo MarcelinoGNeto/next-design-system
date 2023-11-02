@@ -8,8 +8,9 @@ export interface Post {
     url: string;
     excerpt: string;
     tags: string[];
-  }
-  slug: string; //Utilizado como um ID
+  };
+  image?: string;
+  slug: string; // Como se fosse o ID do Post
   title: string;
   content: string;
 }
@@ -22,7 +23,7 @@ export default function PostsService() {
       const postsPromise = postFiles.map(async (postFileName) => {
         const filePath = path.join(PATH_POSTS, postFileName);
         const postFile = await fs.readFile(filePath, { encoding: "utf-8" });
-        const { data, content } = matter(postFile);
+        const { data, content } = matter(postFile); 
 
         const post: Post = {
           metadata: {
@@ -31,17 +32,15 @@ export default function PostsService() {
             tags: data.tags,
             url: data.url,
           },
+          image: data.image || "",
           title: data.title,
           slug: postFileName.replace(".md", ""),
           content,
-        }
-        console.log("post: ", post);
-        return post;
-      })
-
+        };
+        return post;        
+      });
       const posts = Promise.all(postsPromise);
-      console.log("posts: ", posts)
       return posts;
     }
-  }
+  };
 }

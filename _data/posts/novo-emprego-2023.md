@@ -1,5 +1,6 @@
 ---
-date: 2023-10-25
+date: 2023-10-26
+image: https://pbs.twimg.com/media/EjNdhc-WAAEm1Z9.jpg
 excerpt: "É uma nova fase na minha vida..."
 title: "Meu novo emprego na OPAH IT"
 url: "https://www.linkedin.com/feed/update/urn:li:activity:7120024851620278272/"
