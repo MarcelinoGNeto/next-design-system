@@ -12,7 +12,7 @@ export interface TemplateConfig {
     socialNetworks?: {
       youtube?: string;
       instagram?: string;
-      x?: string;
+      twitter?: string;
       github?: string;
       linkedIn?: string;
     }
@@ -22,8 +22,6 @@ export interface TemplateConfig {
 export async function withTemplateConfig(props = {}) {
   const PATH_TEMPLATE_CONFIG = path.resolve(".", "template-config.yml");
   const templateConfig = await readYamlFile<TemplateConfig>(PATH_TEMPLATE_CONFIG);
-
-  console.log(templateConfig)
 
   return {
     templateConfig,

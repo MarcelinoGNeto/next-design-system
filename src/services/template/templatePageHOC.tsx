@@ -17,7 +17,7 @@ export default function templatePageHOC (
           <title>
             {
               templatePageHOCProps?.title
-              ? `${templatePageHOCProps.title} | ${props.templateConfig.site.title}`
+              ? `${templatePageHOCProps?.title} | ${props.templateConfig?.site?.title}`
               : props.templateConfig.site.title 
             }
           </title>

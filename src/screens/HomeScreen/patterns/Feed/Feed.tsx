@@ -6,7 +6,7 @@ import Image from "@src/components/Image/Image";
 import Link from "@src/components/Link/Link";
 import Button from "@src/components/Button/Button";
 import { useTheme } from "@src/theme/ThemeProvider";
-import { useTemplateConfig } from "services/template/TemplateConfigContext";
+import { useTemplateConfig } from "src/services/template/TemplateConfigContext";
 
 interface FeedProps {
   children: React.ReactNode;
@@ -104,7 +104,7 @@ Feed.Header = () => {
           gap: "4px",
         }}
       >
-        {Object.keys(templateConfig?.personal?.socialNetworks).map((key) => {
+        {Object?.keys(templateConfig?.personal?.socialNetworks).map((key) => {
           const socialNetworks = templateConfig?.personal?.socialNetworks[key];
 
           if (socialNetworks) {

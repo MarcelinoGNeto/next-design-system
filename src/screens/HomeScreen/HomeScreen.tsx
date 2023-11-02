@@ -1,15 +1,14 @@
 import Box from "@src/components/Box/Box";
-import Link from "@src/components/Link/Link";
-import Text from "@src/components/Text/Text";
 import { useTheme } from "@src/theme/ThemeProvider";
 import Background from "./patterns/Background/Background";
 import Feed from "./patterns/Feed/Feed";
 import Footer from "./patterns/Footer/Footer";
 import Menu from "./patterns/Menu/Menu";
-import templatePageHOC from "services/template/templatePageHOC";
+import templatePageHOC from "src/services/template/templatePageHOC";
 
 function HomeScreen(props) {
   const theme = useTheme();
+  console.log("props", props)
 
   return (
     <Box
