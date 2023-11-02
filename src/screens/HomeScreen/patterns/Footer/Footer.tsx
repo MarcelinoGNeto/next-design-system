@@ -19,7 +19,7 @@ export default function Footer() {
       }}
     >
       <Text variant="body2">
-        Feito com ❤️ por Marcelino Neto
+        Feito com ❤️ por Marcelino Neto (MGN Tech)
       </Text>
     </Box>
   )

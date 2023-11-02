@@ -30,15 +30,15 @@ export default function Menu() {
           alignItems: 'center',
           justifyContent: 'center',
           hover: {
-            backgroundColor: theme.colors.primary.x400,
+            backgroundColor: theme.colors.positive.x400,
           },
           focus: {
-            backgroundColor: theme.colors.primary.x600,
+            backgroundColor: theme.colors.positive.x600,
           },
         }}
       >
         <Text>
-          MN
+          MGN
         </Text>
       </Button.Base>
 

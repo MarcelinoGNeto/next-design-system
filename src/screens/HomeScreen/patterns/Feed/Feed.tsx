@@ -74,8 +74,15 @@ Feed.Header = () => {
         </Box>
       </Box>
       <Text tag="h1" variant="heading4">
-        Marcelino Neto
+      Marcelino Neto
       </Text>
+      
+      {/* <Link href="https://youtube.com/DevSoutinho">
+        <Icon name="youtube" />
+      </Link>
+      <Icon name="twitter" />
+      <Icon name="instagram" />
+      <Icon name="github" /> */}
     </Box>
   )
 }
