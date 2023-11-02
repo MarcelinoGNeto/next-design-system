@@ -38,7 +38,7 @@ export default function Menu() {
         }}
       >
         <Text>
-          MGN
+          MN
         </Text>
       </Button.Base>
 
