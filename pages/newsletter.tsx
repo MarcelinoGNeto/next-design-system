@@ -37,17 +37,25 @@ export default function NewsletterScreen() {
       <form
         onSubmit={(evento) => {
           evento.preventDefault();
-          console.log(`Email enviado: ${form.values.emailNewsletter}`)
 
           //validação
-          if(!form.values.emailNewsletter.includes("@")) {
-            alert("Informe um email válido!")
-            return;
-          }
-          alert("Você foi cadastrado com sucesso!")
+          // if(!form.values.emailNewsletter.includes("@")) {
+          //   alert("Informe um email válido!")
+          //   return;
+          // }
+          // alert("Você foi cadastrado com sucesso!")
 
           //Enviar para banco de dados
-
+          fetch("/api/newsletter/optin", {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json", //MIME Type
+            },
+            body: JSON.stringify(form.values),
+          })
+            .then(async (respostaDoServer) => {
+              console.log(await respostaDoServer.json());
+            })
         }}
       >
         <Box
@@ -78,6 +86,7 @@ export default function NewsletterScreen() {
           />
           <Button
             fullWidth styleSheet={{ marginTop: '16px' }}
+            href="/"
           >
             Cadastrar
           </Button>
