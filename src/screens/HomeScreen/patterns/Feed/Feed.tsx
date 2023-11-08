@@ -111,12 +111,13 @@ interface FeedPostsProps {
   posts: Post[];
 }
 Feed.Posts = ({ posts }: FeedPostsProps) => {
+  console.log(posts)
   return (
     <Box>
       <Text variant="heading4" styleSheet={{ marginBottom: "27px" }}>
         Últimas Atualizações
       </Text>
-      {posts.map(({ slug, title, metadata, image }) => {
+      {posts.map(({ slug, title, metadata, image, content }) => {
         const { date, excerpt, url, tags } = metadata;
         return (
           <FeedPost
@@ -125,6 +126,7 @@ Feed.Posts = ({ posts }: FeedPostsProps) => {
             date={date}
             excerpt={excerpt}
             tags={tags}
+            content={content}
             url={url}
             image={image}
           />
